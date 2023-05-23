@@ -11,3 +11,18 @@ Also I include [eslint-plugin-import](https://github.com/import-js/eslint-plugin
 
 I use this config basically in every Angular-Project to have less smelly and well formatted code ✨
 
+## Installation
+
+Install the plugin with npm
+
+```bash
+  npm install eslint-config-nlueg-angular
+```
+
+Create `.eslintrc.json` at your root folder and extend from the config: 
+
+```json
+{
+  "extends": "eslint-config-nlueg-angular"
+}
+```
