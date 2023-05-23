@@ -1,0 +1,46 @@
+{
+    "name": "eslint-config-nlueg-angular",
+    "version": "1.0.2",
+    "description": "ESLint-Configuration for all of my Angular projects",
+    "main": "index.js",
+    "keywords": [
+        "eslint",
+        "eslintconfig",
+        "styleguide",
+        "angular",
+        "angular-eslint",
+        "nlueg"
+    ],
+    "author": "Nico Lueg (nicolueg@yahoo.de)",
+    "license": "MIT",
+    "peerDependencies": {
+        "@angular-eslint/builder": "^15.2.1",
+        "@angular-eslint/eslint-plugin": "^15.2.1",
+        "@angular-eslint/eslint-plugin-template": "^15.2.1",
+        "@angular-eslint/schematics": "^15.2.1",
+        "@angular-eslint/template-parser": "^15.2.1",
+        "@typescript-eslint/eslint-plugin": "^5.58.0",
+        "@typescript-eslint/parser": "^5.58.0",
+        "eslint": "^8.38.0",
+        "eslint-config-prettier": "^8.8.0",
+        "eslint-plugin-import": "2.27.5",
+        "eslint-plugin-prettier": "^4.2.1",
+        "eslint-plugin-rxjs": "^5.0.3",
+        "eslint-plugin-rxjs-angular": "^2.0.0",
+        "eslint-plugin-simple-import-sort": "^10.0.0",
+        "eslint-plugin-unused-imports": "^2.0.0"
+    },
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/NLueg/localforage-cordova-sq-lite-driver.git"
+    },
+    "homepage": "https://github.com/NLueg/localforage-cordova-sq-lite-driver#readme",
+    "files": [
+        "index.js",
+        "README.md",
+        "package.json"
+    ]
+}
