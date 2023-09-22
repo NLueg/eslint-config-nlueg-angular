@@ -1,8 +1,5 @@
 module.exports = {
     "root": true,
-    "ignorePatterns": [
-        "projects/**/*"
-    ],
     "overrides": [
         {
             "files": [
@@ -11,8 +8,7 @@ module.exports = {
             "parser": "@typescript-eslint/parser",
             "parserOptions": {
                 "project": [
-                    "tsconfig.json",
-                    "e2e/tsconfig.json"
+                    "tsconfig.json"
                 ],
                 "createDefaultProgram": true
             },
@@ -96,7 +92,35 @@ module.exports = {
                         "argsIgnorePattern": "^_"
                     }
                 ],
-                "@typescript-eslint/no-non-null-assertion": "off"
+                "@angular-eslint/no-conflicting-lifecycle": "error",
+                "@angular-eslint/use-lifecycle-interface": "error",
+                "@typescript-eslint/member-delimiter-style": ["error", {
+                    "multiline": {
+                        "delimiter": "semi",
+                        "requireLast": true
+                    },
+                    "singleline": {
+                        "delimiter": "semi",
+                        "requireLast": false
+                    }
+                }],
+                "@typescript-eslint/no-non-null-assertion": "error",
+                "@typescript-eslint/no-unused-expressions": "error",
+                "@typescript-eslint/prefer-function-type": "error",
+                "@typescript-eslint/semi": "warn",
+                "@typescript-eslint/unified-signatures": "error",
+                "arrow-body-style": ["error", "as-needed"],
+                "constructor-super": "error",
+                "guard-for-in": "warn",
+                "id-match": "warn",
+                "import/no-deprecated": "warn",
+                "no-caller": "error",
+                "no-eval": "error",
+                "no-new-wrappers": "error",
+                "no-throw-literal": "error",
+                "no-undef-init": "error",
+                "no-underscore-dangle": "warn",
+                "radix": "error"
             }
         },
         {
