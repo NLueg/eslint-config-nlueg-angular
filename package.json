@@ -1,6 +1,6 @@
 {
     "name": "eslint-config-nlueg-angular",
-    "version": "17.0.1",
+    "version": "17.1.0",
     "description": "ESLint-Configuration for all of my Angular projects",
     "main": "index.js",
     "keywords": [
