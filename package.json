@@ -1,6 +1,6 @@
 {
     "name": "eslint-config-nlueg-angular",
-    "version": "19.0.0-rc1",
+    "version": "19.0.0",
     "description": "ESLint-Configuration for all of my Angular projects",
     "main": "eslint.config.js",
     "keywords": [
@@ -38,7 +38,7 @@
     },
     "homepage": "https://github.com/NLueg/localforage-cordova-sq-lite-driver#readme",
     "files": [
-        "index.js",
+        "eslint.config.mjs",
         "README.md",
         "package.json"
     ]
