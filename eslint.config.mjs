@@ -1,27 +1,30 @@
-import angular from '@angular-eslint/eslint-plugin';
-import angularTemplate from '@angular-eslint/eslint-plugin-template';
-import templateParserBase from '@angular-eslint/template-parser';
-import typescript from '@typescript-eslint/eslint-plugin';
-import typescriptParser from '@typescript-eslint/parser';
+import angular from 'angular-eslint';
+import eslint from '@eslint/js';
+import tseslint from 'typescript-eslint';
 import eslintPluginPrettier from 'eslint-plugin-prettier';
 import eslintPluginImport from 'eslint-plugin-import';
 import eslintPluginSimpleImportSort from 'eslint-plugin-simple-import-sort';
 import eslintPluginUnusedImports from 'eslint-plugin-unused-imports';
 
-export default [
+export default tseslint.config([
   {
-    files: ["**/*.ts"],
     languageOptions: {
-      parser: typescriptParser,
       parserOptions: {
-        project: "./tsconfig.json",
-        createDefaultProgram: true,
+        projectService: true,
+        tsconfigRootDir: import.meta.dirname,
       },
     },
+  },
+  {
+    files: ["**/*.ts"],
+    extends: [
+      eslint.configs.recommended,
+      ...tseslint.configs.recommended,
+      ...tseslint.configs.stylistic,
+      ...angular.configs.tsRecommended,
+    ],
+    processor: angular.processInlineTemplates,
     plugins: {
-      "@typescript-eslint": typescript,
-      "@angular-eslint": angular,
-      "@angular-eslint/template": angularTemplate,
       "import": eslintPluginImport,
       "prettier": eslintPluginPrettier,
       "simple-import-sort": eslintPluginSimpleImportSort,
@@ -66,8 +69,6 @@ export default [
           suffixes: ["Component", "Page"],
         },
       ],
-      "@typescript-eslint/no-explicit-any": "off",
-      "@typescript-eslint/no-empty-function": "off",
       "@typescript-eslint/await-thenable": "error",
       "@typescript-eslint/explicit-module-boundary-types": "error",
       "unused-imports/no-unused-imports": "error",
@@ -104,9 +105,10 @@ export default [
   },
   {
     files: ["**/*.html"],
-    languageOptions: {
-      parser: templateParserBase,  // Add this line
-    },
+    extends: [
+      ...angular.configs.templateRecommended,
+      ...angular.configs.templateAccessibility,
+    ],
     plugins: {
       "prettier": eslintPluginPrettier,
     },
@@ -125,4 +127,4 @@ export default [
       ],
     },
   }
-];
+]);
