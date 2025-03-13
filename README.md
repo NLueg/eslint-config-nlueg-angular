@@ -19,10 +19,39 @@ Install the plugin with npm
   npm install eslint-config-nlueg-angular
 ```
 
-Create `.eslintrc.json` at your root folder and extend from the config: 
+Create `eslint.config.mjs` at your root folder and extend from the config: 
 
-```json
-{
-  "extends": "eslint-config-nlueg-angular"
-}
+```js
+import baseConfig from './node_modules/eslint-config-nlueg-angular/eslint.config.mjs';
+
+export default [
+...baseConfig,
+];
+
 ```
+
+You can also change some specific rules like the following:
+
+```js
+import baseConfig from './node_modules/eslint-config-nlueg-angular/eslint.config.mjs';
+import angularEslintTemplate from '@angular-eslint/eslint-plugin-template';
+
+export default [
+  ...baseConfig,
+  {
+    plugins: {
+      "@angular-eslint/template": angularEslintTemplate,
+    },
+    rules: {
+      "@typescript-eslint/no-empty-function": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-non-null-assertion": "off",
+      "@angular-eslint/template/click-events-have-key-events": "warn",
+      "@angular-eslint/template/interactive-supports-focus": "warn",
+    }
+  }
+];
+```
+
+Ensure that you define the corresponding plugin where the specific rule is defined in.
+Otherwise, it won't work to change the severity of a rule.
