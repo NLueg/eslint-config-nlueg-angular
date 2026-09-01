@@ -83,7 +83,6 @@ export default tseslint.config([
           argsIgnorePattern: "^_",
         },
       ],
-      "@angular-eslint/no-conflicting-lifecycle": "error",
       "@angular-eslint/use-lifecycle-interface": "error",
       "@typescript-eslint/no-non-null-assertion": "error",
       "@typescript-eslint/no-unused-expressions": "error",
